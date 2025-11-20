@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>校区调整对大学生日常生活与满意度影响问卷</title>
+    <style>
+        /* 页面样式设计 - 保持简洁专业 */
+        body { font-family: "Microsoft YaHei", sans-serif; background-color: #f0f2f5; margin: 0; padding: 20px; color: #333; line-height: 1.6; }
+        .container { max-width: 800px; margin: 0 auto; background: #fff; padding: 40px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        h1 { text-align: center; font-size: 20px; color: #000; margin-bottom: 20px; }
+        .intro { background: #e8f4fd; padding: 15px; border-radius: 5px; font-size: 14px; color: #555; margin-bottom: 30px; border-left: 4px solid #1890ff; }
+        .section-header { font-size: 18px; font-weight: bold; color: #1890ff; margin-top: 30px; margin-bottom: 15px; padding-bottom: 10px; border-bottom: 1px solid #eee; }
+        .question-block { margin-bottom: 25px; }
+        .q-title { font-weight: bold; margin-bottom: 10px; display: block; }
+        .q-desc { font-size: 13px; color: #888; margin-bottom: 10px; }
+        .radio-group label, .checkbox-group label { display: block; margin-bottom: 8px; cursor: pointer; font-weight: normal; }
+        .radio-group input, .checkbox-group input { margin-right: 8px; }
+        
+        /* 量表题样式 */
+        .scale-table { width: 100%; border-collapse: collapse; margin-top: 5px; }
+        .scale-table th { font-weight: normal; font-size: 12px; text-align: center; color: #666; }
+        .scale-table td { padding: 8px 0; text-align: center; border-bottom: 1px dashed #eee; }
+        .scale-label { text-align: left !important; width: 60%; padding-right: 10px; }
+        
+        /* 按钮样式 */
+        .btn-area { margin-top: 40px; text-align: center; padding-top: 20px; border-top: 1px solid #eee; }
+        button { background-color: #1890ff; color: white; border: none; padding: 10px 30px; font-size: 16px; border-radius: 4px; cursor: pointer; margin: 0 10px; }
+        button:hover { background-color: #40a9ff; }
+        button.secondary { background-color: #d9d9d9; color: #555; }
+        
+        /* 逻辑控制类 */
+        .hidden { display: none; }
+        .required-mark { color: red; margin-left: 3px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>《校区调整对大学生日常生活与满意度影响问卷》</h1>
+    
+    <div class="intro">
+        <p>说明：本问卷面向因校区调整 / 搬迁而在新校区学习生活的全日制学生，旨在了解校区变化对学习、生活与心理感受的影响。</p>
+        <p>本问卷仅用于学术研究，所有数据将严格保密，结果只以汇总形式呈现。</p>
+        <p>填写时间约 8–12 分钟。没有 “ 对 ” 或 “ 错 ” 的答案，请根据你真实感受作答。</p>
+        <p>除特别说明外，下列题目均采用 1–5 级评分：<br>
+        1= 非常不同意， 2= 不同意， 3= 一般， 4= 同意， 5= 非常同意。</p>
+    </div>
+
+    <form id="surveyForm" action="https://formspree.io/f/xqangalv" method="POST">
+
+        <div id="part-A">
+            <div class="section-header">A.  基本信息</div>
+
+            <div class="question-block">
+                <label class="q-title">A1.  你目前的年级：<span class="required-mark">*</span></label>
+                <div class="radio-group">
+                    <label><input type="radio" name="A1" value="大一" required> ①   大一</label>
+                    <label><input type="radio" name="A1" value="大二"> ②   大二</label>
+                    <label><input type="radio" name="A1" value="大三"> ③   大三</label>
+                    <label><input type="radio" name="A1" value="大四"> ④   大四</label>
+                </div>
+            </div>
+
+            <div class="question-block">
+                <label class="q-title">A2.  你的性别：</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="A2" value="男"> ①   男</label>
+                    <label><input type="radio" name="A2" value="女"> ②   女</label>
+                    <label><input type="radio" name="A2" value="其他"> ③   其他 / 不愿透露</label>
+                </div>
+            </div>
+
+            <div class="question-block">
+                <label class="q-title">A3.  这次换校区，你的感觉更接近：</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="A3" value="被动"> ①   基本是被动（学校统一安排，自己几乎不能选择）</label>
+                    <label><input type="radio" name="A3" value="半被动"> ②   有部分选择空间，但整体还是偏被动</label>
+                    <label><input type="radio" name="A3" value="主动"> ③   基本是主动（我原本就希望去这个校区）</label>
+                </div>
+            </div>
+
+            <div class="question-block">
+                <label class="q-title">A4.  从小学到现在（包括上大学这次），大概经历过几次跨学校或跨城市的搬迁 / 转学？</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="A4" value="0次"> ①  0  次</label>
+                    <label><input type="radio" name="A4" value="1次"> ②  1  次</label>
+                    <label><input type="radio" name="A4" value="2-3次"> ③  2–3  次</label>
+                    <label><input type="radio" name="A4" value="超过3次"> ④   超过  3  次</label>
+                </div>
+            </div>
+
+            <div class="btn-area">
+                <button type="button" onclick="nextStep('A')">下一页</button>
+            </div>
+        </div>
+
+        <div id="part-B" class="hidden">
+            <div class="section-header">B.  旧校区满意度（回顾）</div>
+            <div class="q-desc">
+                请回想：在本学年搬到新校区之前，你在旧校区最后一个学期的真实感受。<br>
+                以下题目中的 “ 旧校区 ” 均指 玉泉路 校区。<br>
+                1= 非常不同意， 5= 非常同意。
+            </div>
+
+            <div class="question-block">
+                <label class="q-title">B1.  旧校区学习环境</label>
+                <table class="scale-table">
+                    <tr><th></th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr>
+                    <tr><td class="scale-label">B1-1.  在旧校区，我对教室、实验室、自习空间的整体条件是满意的。</td>
+                        <td><input type="radio" name="B1-1" value="1"></td><td><input type="radio" name="B1-1" value="2"></td><td><input type="radio" name="B1-1" value="3"></td><td><input type="radio" name="B1-1" value="4"></td><td><input type="radio" name="B1-1" value="5"></td></tr>
+                    <tr><td class="scale-label">B1-2.  在旧校区，我觉得学习资源（图书馆、自习教室、网络等）是充足的。</td>
+                        <td><input type="radio" name="B1-2" value="1"></td><td><input type="radio" name="B1-2" value="2"></td><td><input type="radio" name="B1-2" value="3"></td><td><input type="radio" name="B1-2" value="4"></td><td><input type="radio" name="B1-2" value="5"></td></tr>
+                    <tr><td class="scale-label">B1-3.  在旧校区，上课的环境（噪音、温度、桌椅等）有利于我专心学习。</td>
+                        <td><input type="radio" name="B1-3" value="1"></td><td><input type="radio" name="B1-3" value="2"></td><td><input type="radio" name="B1-3" value="3"></td><td><input type="radio" name="B1-3" value="4"></td><td><input type="radio" name="B1-3" value="5"></td></tr>
+                </table>
+            </div>
+
+            <div class="question-block">
+                <label class="q-title">B2.  旧校区居住与生活</label>
+                <table class="scale-table">
+                    <tr><th></th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr>
+                    <tr><td class="scale-label">B2-1.  在旧校区，我对宿舍 / 居住条件整体满意。</td>
+                        <td><input type="radio" name="B2-1" value="1"></td><td><input type="radio" name="B2-1" value="2"></td><td><input type="radio" name="B2-1" value="3"></td><td><input type="radio" name="B2-1" value="4"></td><td><input type="radio" name="B2-1" value="5"></td></tr>
+                    <tr><td class="scale-label">B2-2.  在旧校区，吃饭、 购物， 快递等日常生活非常方便。</td>
+                        <td><input type="radio" name="B2-2" value="1"></td><td><input type="radio" name="B2-2" value="2"></td><td><input type="radio" name="B2-2" value="3"></td><td><input type="radio" name="B2-2" value="4"></td><td><input type="radio" name="B2-2" value="5"></td></tr>
+                    <tr><td class="scale-label">B2-3.  在旧校区，我觉得自己的居住环境安全</td>
+                        <td><input type="radio" name="B2-3" value="1"></td><td><input type="radio" name="B2-3" value="2"></td><td><input type="radio" name="B2-3" value="3"></td><td><input type="radio" name="B2-3" value="4"></td><td><input type="radio" name="B2-3" value="5"></td></tr>
+                    <tr><td class="scale-label">B2-4  在旧校区，我对于学校（包括周边）的医疗资源很满意。</td>
+                        <td><input type="radio" name="B2-4" value="1"></td><td><input type="radio" name="B2-4" value="2"></td><td><input type="radio" name="B2-4" value="3"></td><td><input type="radio" name="B2-4" value="4"></td><td><input type="radio" name="B2-4" value="5"></td></tr>
+                    <tr><td class="scale-label">B2-5  在旧校区，外出游玩，校外购物非常满意</td>
+                        <td><input type="radio" name="B2-5" value="1"></td><td><input type="radio" name="B2-5" value="2"></td><td><input type="radio" name="B2-5" value="3"></td><td><input type="radio" name="B2-5" value="4"></td><td><input type="radio" name="B2-5" value="5"></td></tr>
+                </table>
+            </div>
+
+            <div class="question-block">
+                <label class="q-title">B3.  旧校区通勤与校园环境</label>
+                <table class="scale-table">
+                    <tr><th></th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr>
+                    <tr><td class="scale-label">B3-1.  在旧校区，通勤时间不会让我感到负担。</td>
+                        <td><input type="radio" name="B3-1" value="1"></td><td><input type="radio" name="B3-1" value="2"></td><td><input type="radio" name="B3-1" value="3"></td><td><input type="radio" name="B3-1" value="4"></td><td><input type="radio" name="B3-1" value="5"></td></tr>
+                    <tr><td class="scale-label">B3-2.  我喜欢旧校区的整体环境（绿化、景观、氛围等）。</td>
+                        <td><input type="radio" name="B3-2" value="1"></td><td><input type="radio" name="B3-2" value="2"></td><td><input type="radio" name="B3-2" value="3"></td><td><input type="radio" name="B3-2" value="4"></td><td><input type="radio" name="B3-2" value="5"></td></tr>
+                </table>
+            </div>
+
+             <div class="question-block">
+                <label class="q-title">B4.  人际关系与校园归属感</label>
+                <table class="scale-table">
+                    <tr><th></th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr>
+                    <tr><td class="scale-label">B4-1.  我在 旧 校区能够和重要的朋友 / 同学保持联系。</td>
+                        <td><input type="radio" name="B4-1" value="1"></td><td><input type="radio" name="B4-1" value="2"></td><td><input type="radio" name="B4-1" value="3"></td><td><input type="radio" name="B4-1" value="4"></td><td><input type="radio" name="B4-1" value="5"></td></tr>
+                    <tr><td class="scale-label">B4-2.  我觉得自己是 旧 校区这个 “ 社区 ” 的一部分。</td>
+                        <td><input type="radio" name="B4-2" value="1"></td><td><input type="radio" name="B4-2" value="2"></td><td><input type="radio" name="B4-2" value="3"></td><td><input type="radio" name="B4-2" value="4"></td><td><input type="radio" name="B4-2" value="5"></td></tr>
+                    <tr><td class="scale-label">B4-3.  在 旧校区 ，我能感受到来自同学 / 老师的支持。</td>
+                        <td><input type="radio" name="B4-3" value="1"></td><td><input type="radio" name="B4-3" value="2"></td><td><input type="radio" name="B4-3" value="3"></td><td><input type="radio" name="B4-3" value="4"></td><td><input type="radio" name="B4-3" value="5"></td></tr>
+                    <tr><td class="scale-label">B4-4.  总体来说，我对自己在 旧 校区的人际关系状况感到满意。</td>
+                        <td><input type="radio" name="B4-4" value="1"></td><td><input type="radio" name="B4-4" value="2"></td><td><input type="radio" name="B4-4" value="3"></td><td><input type="radio" name="B4-4" value="4"></td><td><input type="radio" name="B4-4" value="5"></td></tr>
+                </table>
+            </div>
+
+            <div class="question-block">
+                <label class="q-title">B5.  旧校区整体感受</label>
+                <table class="scale-table">
+                    <tr><th></th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr>
+                    <tr><td class="scale-label">B5-1.  总体来说，我对在旧校区的学习生活是满意的。</td>
+                        <td><input type="radio" name="B5-1" value="1"></td><td><input type="radio" name="B5-1" value="2"></td><td><input type="radio" name="B5-1" value="3"></td><td><input type="radio" name="B5-1" value="4"></td><td><input type="radio" name="B5-1" value="5"></td></tr>
+                    <tr><td class="scale-label">B5-2  总体来说，我对自己目前的生活状况感到满意。</td>
+                        <td><input type="radio" name="B5-2" value="1"></td><td><input type="radio" name="B5-2" value="2"></td><td><input type="radio" name="B5-2" value="3"></td><td><input type="radio" name="B5-2" value="4"></td><td><input type="radio" name="B5-2" value="5"></td></tr>
+                    <tr><td class="scale-label">B5-3.  如果只考虑旧校区本身（不考虑校区调整等其他因素），我愿意在旧校区继续读完大学。</td>
+                        <td><input type="radio" name="B5-3" value="1"></td><td><input type="radio" name="B5-3" value="2"></td><td><input type="radio" name="B5-3" value="3"></td><td><input type="radio" name="B5-3" value="4"></td><td><input type="radio" name="B5-3" value="5"></td></tr>
+                </table>
+            </div>
+
+            <div class="btn-area">
+                <button type="button" class="secondary" onclick="prevStep('B')">上一页</button>
+                <button type="button" onclick="nextStep('B')">下一页</button>
+            </div>
+        </div>
+
+        <div id="part-C" class="hidden">
+            <div class="section-header">C.  新校区学习与生活环境感受（当前）</div>
+            <div class="q-desc">
+                请根据你在新校区目前这个学期的真实感受作答。<br>
+                以下题目中的 “ 新校区 ” 指 雁栖湖 校区。<br>
+                1= 非常不同意， 5= 非常同意。
+            </div>
+
+             <div class="question-block">
+                <label class="q-title">C1.  新校区学习环境</label>
+                <table class="scale-table">
+                    <tr><th></th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr>
+                    <tr><td class="scale-label">C1-1.  在新校区，我对教室、实验室、自习空间的整体条件是满意的。</td>
+                        <td><input type="radio" name="C1-1" value="1"></td><td><input type="radio" name="C1-1" value="2"></td><td><input type="radio" name="C1-1" value="3"></td><td><input type="radio" name="C1-1" value="4"></td><td><input type="radio" name="C1-1" value="5"></td></tr>
+                    <tr><td class="scale-label">C1-2.  在新校区，我觉得学习资源（图书馆、自习教室、网络等）是充足的。</td>
+                        <td><input type="radio" name="C1-2" value="1"></td><td><input type="radio" name="C1-2" value="2"></td><td><input type="radio" name="C1-2" value="3"></td><td><input type="radio" name="C1-2" value="4"></td><td><input type="radio" name="C1-2" value="5"></td></tr>
+                    <tr><td class="scale-label">C1-3.  在新校区，上课的环境（噪音、温度、桌椅等）有利于我专心学习。</td>
+                        <td><input type="radio" name="C1-3" value="1"></td><td><input type="radio" name="C1-3" value="2"></td><td><input type="radio" name="C1-3" value="3"></td><td><input type="radio" name="C1-3" value="4"></td><td><input type="radio" name="C1-3" value="5"></td></tr>
+                </table>
+            </div>
+
+            <div class="question-block">
+                <label class="q-title">C2.  新校区居住与生活</label>
+                <table class="scale-table">
+                    <tr><th></th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr>
+                    <tr><td class="scale-label">C2-1.  在新校区，我对宿舍 / 居住条件整体满意。</td>
+                        <td><input type="radio" name="C2-1" value="1"></td><td><input type="radio" name="C2-1" value="2"></td><td><input type="radio" name="C2-1" value="3"></td><td><input type="radio" name="C2-1" value="4"></td><td><input type="radio" name="C2-1" value="5"></td></tr>
+                    <tr><td class="scale-label">C2-2.  在新校区，学校内的吃饭、购物，快递等日常生活非常方便。</td>
+                        <td><input type="radio" name="C2-2" value="1"></td><td><input type="radio" name="C2-2" value="2"></td><td><input type="radio" name="C2-2" value="3"></td><td><input type="radio" name="C2-2" value="4"></td><td><input type="radio" name="C2-2" value="5"></td></tr>
+                    <tr><td class="scale-label">C2-3.  在新校区，我觉得自己的居住环境安全。</td>
+                        <td><input type="radio" name="C2-3" value="1"></td><td><input type="radio" name="C2-3" value="2"></td><td><input type="radio" name="C2-3" value="3"></td><td><input type="radio" name="C2-3" value="4"></td><td><input type="radio" name="C2-3" value="5"></td></tr>
+                    <tr><td class="scale-label">C2-4  在旧校区，我对于学校（包括周边）的医疗资源很满意。</td>
+                        <td><input type="radio" name="C2-4" value="1"></td><td><input type="radio" name="C2-4" value="2"></td><td><input type="radio" name="C2-4" value="3"></td><td><input type="radio" name="C2-4" value="4"></td><td><input type="radio" name="C2-4" value="5"></td></tr>
+                    <tr><td class="scale-label">C2-5  在旧校区，外出游玩，校外购物非常满意</td>
+                        <td><input type="radio" name="C2-5" value="1"></td><td><input type="radio" name="C2-5" value="2"></td><td><input type="radio" name="C2-5" value="3"></td><td><input type="radio" name="C2-5" value="4"></td><td><input type="radio" name="C2-5" value="5"></td></tr>
+                </table>
+            </div>
+
+            <div class="question-block">
+                <label class="q-title">C3.  新校区通勤与校园环境</label>
+                <table class="scale-table">
+                    <tr><th></th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr>
+                    <tr><td class="scale-label">C3-1.  在新校区，通勤时间不会让我感到负担。</td>
+                        <td><input type="radio" name="C3-1" value="1"></td><td><input type="radio" name="C3-1" value="2"></td><td><input type="radio" name="C3-1" value="3"></td><td><input type="radio" name="C3-1" value="4"></td><td><input type="radio" name="C3-1" value="5"></td></tr>
+                    <tr><td class="scale-label">C3-2.  我喜欢新校区的整体环境（绿化、景观、氛围等）。</td>
+                        <td><input type="radio" name="C3-2" value="1"></td><td><input type="radio" name="C3-2" value="2"></td><td><input type="radio" name="C3-2" value="3"></td><td><input type="radio" name="C3-2" value="4"></td><td><input type="radio" name="C3-2" value="5"></td></tr>
+                </table>
+            </div>
+
+            <div class="question-block">
+                <label class="q-title">C4. 人际关系与校园归属感</label>
+                <table class="scale-table">
+                    <tr><th></th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr>
+                    <tr><td class="scale-label">C4-1.  搬到新校区后，我结识了新的朋友或扩大了社交圈。</td>
+                        <td><input type="radio" name="C4-REL-1" value="1"></td><td><input type="radio" name="C4-REL-1" value="2"></td><td><input type="radio" name="C4-REL-1" value="3"></td><td><input type="radio" name="C4-REL-1" value="4"></td><td><input type="radio" name="C4-REL-1" value="5"></td></tr>
+                    <tr><td class="scale-label">C4-2  我在新校区仍然能够和重要的朋友 / 同学保持联系。</td>
+                        <td><input type="radio" name="C4-REL-2" value="1"></td><td><input type="radio" name="C4-REL-2" value="2"></td><td><input type="radio" name="C4-REL-2" value="3"></td><td><input type="radio" name="C4-REL-2" value="4"></td><td><input type="radio" name="C4-REL-2" value="5"></td></tr>
+                    <tr><td class="scale-label">C4-3.  我觉得自己是新校区这个 “ 社区 ” 的一部分。</td>
+                        <td><input type="radio" name="C4-REL-3" value="1"></td><td><input type="radio" name="C4-REL-3" value="2"></td><td><input type="radio" name="C4-REL-3" value="3"></td><td><input type="radio" name="C4-REL-3" value="4"></td><td><input type="radio" name="C4-REL-3" value="5"></td></tr>
+                    <tr><td class="scale-label">C4-4.  在新校区，我能感受到来自同学 / 老师的支持。</td>
+                        <td><input type="radio" name="C4-REL-4" value="1"></td><td><input type="radio" name="C4-REL-4" value="2"></td><td><input type="radio" name="C4-REL-4" value="3"></td><td><input type="radio" name="C4-REL-4" value="4"></td><td><input type="radio" name="C4-REL-4" value="5"></td></tr>
+                    <tr><td class="scale-label">C4-5.  跟旧校区相比，我在新校区的孤独感更强。（反向题）</td>
+                        <td><input type="radio" name="C4-REL-5" value="1"></td><td><input type="radio" name="C4-REL-5" value="2"></td><td><input type="radio" name="C4-REL-5" value="3"></td><td><input type="radio" name="C4-REL-5" value="4"></td><td><input type="radio" name="C4-REL-5" value="5"></td></tr>
+                    <tr><td class="scale-label">C4-6.  总体来说，我对自己在新校区的人际关系状况感到满意。</td>
+                        <td><input type="radio" name="C4-REL-6" value="1"></td><td><input type="radio" name="C4-REL-6" value="2"></td><td><input type="radio" name="C4-REL-6" value="3"></td><td><input type="radio" name="C4-REL-6" value="4"></td><td><input type="radio" name="C4-REL-6" value="5"></td></tr>
+                </table>
+            </div>
+
+            <div class="question-block">
+                <label class="q-title">C4.  新校区整体感受</label>
+                <table class="scale-table">
+                    <tr><th></th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr>
+                    <tr><td class="scale-label">C4-1.  总体来说，我对在新校区的学习生活是满意的。</td>
+                        <td><input type="radio" name="C4-ALL-1" value="1"></td><td><input type="radio" name="C4-ALL-1" value="2"></td><td><input type="radio" name="C4-ALL-1" value="3"></td><td><input type="radio" name="C4-ALL-1" value="4"></td><td><input type="radio" name="C4-ALL-1" value="5"></td></tr>
+                    <tr><td class="scale-label">C4-2     总体来说，我对自己目前的生活状况感到满意。</td>
+                        <td><input type="radio" name="C4-ALL-2" value="1"></td><td><input type="radio" name="C4-ALL-2" value="2"></td><td><input type="radio" name="C4-ALL-2" value="3"></td><td><input type="radio" name="C4-ALL-2" value="4"></td><td><input type="radio" name="C4-ALL-2" value="5"></td></tr>
+                    <tr><td class="scale-label">C4-3.  如果只考虑新校区本身，我愿意在新校区读完整个大学阶段。</td>
+                        <td><input type="radio" name="C4-ALL-3" value="1"></td><td><input type="radio" name="C4-ALL-3" value="2"></td><td><input type="radio" name="C4-ALL-3" value="3"></td><td><input type="radio" name="C4-ALL-3" value="4"></td><td><input type="radio" name="C4-ALL-3" value="5"></td></tr>
+                </table>
+            </div>
+
+            <div class="section-header">D.  开放题（可选）</div>
+            
+            <div class="question-block">
+                <label class="q-title">D1.  在你看来，这次换校区对你最大的正面影响是什么？</label>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="D1" value="校区面积增大"> 校区面积增大，更有校园生活</label>
+                    <label><input type="checkbox" name="D1" value="体育设施完善"> 体育设施完善</label>
+                    <label><input type="checkbox" name="D1" value="宿舍单人间条件满意"> 宿舍单人间条件满意</label>
+                    <label><input type="checkbox" name="D1" value="方便科研"> 方便科研</label>
+                    <label><input type="checkbox" name="D1" value="学习资源丰富"> 图书馆自习室等学习资源丰富</label>
+                    <label><input type="checkbox" name="D1" value="其他"> 其他：<input type="text" name="D1_Other" style="border:none; border-bottom:1px solid #ccc; width:150px;"></label>
+                </div>
+            </div>
+
+            <div class="question-block">
+                <label class="q-title">D2.  这次换校区对你最大的负面影响或困扰是什么？</label>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="D2" value="学习"> 学习</label>
+                    <label><input type="checkbox" name="D2" value="娱乐"> 娱乐</label>
+                    <label><input type="checkbox" name="D2" value="运动"> 运动</label>
+                    <label><input type="checkbox" name="D2" value="科研"> 科研</label>
+                    <label><input type="checkbox" name="D2" value="住宿"> 住宿</label>
+                    <label><input type="checkbox" name="D2" value="饮食"> 饮食</label>
+                    <label>详细说明：<br><textarea name="D2_Detail" rows="3" style="width:100%; margin-top:5px;"></textarea></label>
+                </div>
+            </div>
+
+            <div class="question-block">
+                <label class="q-title">D3.  如果学校想要减少换校区带来的负面影响，你最希望改进哪一件事？</label>
+                <textarea name="D3" rows="4" style="width:100%; border:1px solid #ccc; padding:5px;"></textarea>
+            </div>
+
+            <div class="btn-area">
+                <button type="button" class="secondary" onclick="prevStep('C')">上一页</button>
+                <button type="submit">提交问卷</button>
+            </div>
+        </div>
+
+    </form>
+</div>
+
+<script>
+    // 页面逻辑控制
+    function nextStep(currentStep) {
+        if (currentStep === 'A') {
+            // 验证是否选择了年级
+            const gradeOptions = document.getElementsByName('A1');
+            let selectedGrade = null;
+            for(let option of gradeOptions){
+                if(option.checked) selectedGrade = option.value;
+            }
+
+            if(!selectedGrade) {
+                alert("请完成 A1 题的选择");
+                return;
+            }
+
+            // 隐藏A
+            document.getElementById('part-A').classList.add('hidden');
+
+            // 跳转逻辑：如果是"大一"，跳到C；否则去B
+            if (selectedGrade === '大一') {
+                document.getElementById('part-C').classList.remove('hidden');
+            } else {
+                document.getElementById('part-B').classList.remove('hidden');
+            }
+            window.scrollTo(0,0);
+        }
+        else if (currentStep === 'B') {
+            // B 去 C
+            document.getElementById('part-B').classList.add('hidden');
+            document.getElementById('part-C').classList.remove('hidden');
+            window.scrollTo(0,0);
+        }
+    }
+
+    function prevStep(currentStep) {
+        if (currentStep === 'B') {
+            // B 回 A
+            document.getElementById('part-B').classList.add('hidden');
+            document.getElementById('part-A').classList.remove('hidden');
+        }
+        else if (currentStep === 'C') {
+            // C 回哪里？要看A1选了什么
+            const gradeOptions = document.getElementsByName('A1');
+            let selectedGrade = null;
+            for(let option of gradeOptions){
+                if(option.checked) selectedGrade = option.value;
+            }
+
+            document.getElementById('part-C').classList.add('hidden');
+            
+            if (selectedGrade === '大一') {
+                document.getElementById('part-A').classList.remove('hidden');
+            } else {
+                document.getElementById('part-B').classList.remove('hidden');
+            }
+        }
+        window.scrollTo(0,0);
+    }
+</script>
+
+</body>
+</html>
